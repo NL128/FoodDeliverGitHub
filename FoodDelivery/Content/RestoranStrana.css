@@ -1,0 +1,188 @@
+﻿.holder_mid{
+    width:90%;
+    margin:0 auto;
+
+}
+.image_Area {
+    position: relative;
+    width: 100%;
+    min-height: 40vh;
+}
+.image_Area img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.storeDetails {
+    position: absolute;
+    width: 90%;
+    margin: 10vh 5%;
+    border: 0 solid white;
+    background-color:rgba(0, 0, 0, 0.00);
+    color: #808080;
+}
+/*
+    tabs area
+*/
+.menuRight {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+}
+.leftArea{
+    position:relative;
+    width:300px;
+    height:auto;
+   
+}
+    .leftArea h3{
+        width:100%;
+        text-align:center;
+    }
+    .leftArea ul {
+        width: 90%;
+        margin:0 auto;
+        list-style-type: none;
+        display: block;
+        padding:0; margin:0;
+    }
+        .leftArea ul li {
+            cursor:pointer;
+            padding:5px 0;
+            color: #808080;
+            width:90%;
+            margin:0 auto;
+        }
+            .leftArea ul li:hover{
+                background-color: #808080;
+                color: #000000;
+              
+            }
+            .leftArea ul li a {
+                color: #808080;
+                text-decoration: none;
+                font-size: 1.2em;
+            }
+            .leftArea ul li a:visited {
+                color: #808080;
+               
+            }
+            .leftArea ul li:hover a {
+                color: #000000;
+            }
+
+                .rightArea {
+                    position: relative;
+                    width: 90%;
+                    margin: 0 auto;
+                    height: auto;
+                }
+.products_set {
+    width: 100%;
+  
+ 
+    list-style-type: none;
+    display: block;
+}
+    .products_set li {
+        width:100%;
+        margin:0px auto;
+        color: #808080;
+        cursor:pointer;
+        padding:5px 0;
+        font-size:1.2em;
+        
+    }
+        .products_set li:hover {
+            background-color: #808080;
+            color: #000000;
+        }
+       
+        /*
+            Restoran card area
+
+
+        */
+.store-card {
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin: 10px 0;
+    display: flex;
+    justify-content: flex-start;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 6px rgba(81, 81, 81, 0.92);
+}
+
+.card-image-area {
+    position: relative;
+    width: 100px;
+    min-height: 120px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+    .card-image-area div {
+        position: relative;
+        width: 60px;
+        height: 60px;
+    }
+
+        .card-image-area div img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 100%;
+            border: 1px solid #aeaeae;
+        }
+
+.right-holder {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.row-card {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-card {
+    position: relative;
+    max-width: 300px;
+    height: auto;
+}
+
+    .col-card img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
+.setLargeWidth {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.header-title {
+    word-wrap: hyphenate;
+    font-size: 1em;
+    font-weight: 100;
+    color: #0f0f0f;
+}
+
+.normal-font-card {
+    position: relative;
+    width: 100%;
+    word-wrap: hyphenate;
+    font-size: 0.8em;
+    color: #949494;
+}

@@ -1,0 +1,104 @@
+﻿.header-food{
+    position:relative;
+    width:100%;
+    min-height:70px;
+    padding:10px 0;
+    background-color:white;
+}
+
+.lable-food{
+    position:relative;
+    width:90%;
+    height:auto;
+    margin:0 auto;
+
+    justify-content:flex-start;
+    display:flex;
+}
+.logo-food{
+    position:relative;
+   
+    min-height:40px;
+    min-width:80px;
+   
+    cursor:pointer;
+}
+
+.logout {
+    position: relative;
+    padding:0;
+    min-height: 40px;
+    width:40px;
+    
+    cursor: pointer;
+}
+.logout img{
+    position:absolute;width:40px;height:40px;
+}
+.logo-food img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.inner-lable{
+    width:100%;
+    min-height:40px;
+    
+    display:flex;
+    justify-content:flex-end;
+
+}
+    .inner-lable ul {
+        width: 100%;
+        height:auto;
+        display: inline-flex;
+        justify-content: flex-end;
+    }
+.inner-lable ul li{
+    
+    height:auto;
+    padding:2px 6px;
+    margin:0 4px;
+    
+    text-decoration:none;
+    list-style:none;
+    cursor:pointer;
+    
+}
+    .inner-lable ul li a {
+        text-decoration: none;
+        font-size: 19px;
+        color:#0f0f0f;
+        font-family: 'Varela Round', sans-serif;
+        height: 40px;
+        line-height: 40px;
+    }
+        .inner-lable ul li a:visited {
+            text-decoration: none;
+            color: #0f0f0f;
+        }
+.inner-lable ul li a:hover{
+    color:#ffcb00;
+}
+
+/*Footer area*/
+.footer-food {
+    position: relative;
+    width: 100%;
+    min-height: 60px;
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+   
+}
+.footer-food div{
+    position:relative;width:90%;
+    margin:0 auto;
+    background-color:white;
+    line-height:60px;
+}
+
+
+ 
+
+/*End Footer area*/
+

@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<link href="~/Content/homePage.css" rel="stylesheet" />
+@{ Html.RenderPartial("_HereMapLinks");}
+<div class="nev-food">
+    <div class="inline-set">
+        <div class="nev-left">
+            <div class="nev-areas">
+                <h1>Naruči,<br />dostava za manje od 1 minuta!</h1>
+                <p>900 restorana , 25 gradova,50 kuhinja</p>
+            </div>
+            <div class="nev-areas">
+                <div class="inline-set">
+                   @{ Html.RenderPartial("_HereMapInputs",true);} <!--_HereMapInputs goes with _HereMapPopUp partial  -->
+                </div>
+                <div id='searchBoxDisplay'></div>
+                <ul id="output" class="resultsDisplay">
+                </ul>
+            </div>
+
+        </div>
+        <div class="nev-left">
+            <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+        </div>
+    </div>
+    @{Html.RenderPartial("_HereMapPopUp");} <!--_HereMapPopUp goes with _HereMapInputs partial-->
+    
+
+
+
+
+</div>
+<script src="~/Scripts/HereMapsLocal.js"></script> <!--HereMapsLocal.js goes with _HereMapPopUp and _HereMapInputs-->
