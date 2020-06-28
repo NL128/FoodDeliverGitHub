@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="skomi69_dostavaModelStoreContainer" CdmEntityContainer="skomi69_dostavaEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="skomi69_dostavaModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="skomi69_dostavaModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="skomi69_dostavaModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="skomi69_dostavaModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="skomi69_dostavaModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DrzavaTbls">
+      <EntityTypeMapping TypeName="skomi69_dostavaModel.DrzavaTbl">
+        <MappingFragment StoreEntitySet="DrzavaTbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Zastava" ColumnName="Zastava" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GradoviTbls">
+      <EntityTypeMapping TypeName="skomi69_dostavaModel.GradoviTbl">
+        <MappingFragment StoreEntitySet="GradoviTbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="DrzavaId" ColumnName="DrzavaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Veza_Grad_OpstinaTbl">
+      <EntityTypeMapping TypeName="skomi69_dostavaModel.Veza_Grad_OpstinaTbl">
+        <MappingFragment StoreEntitySet="Veza_Grad_OpstinaTbl">
+          <ScalarProperty Name="RestoranId" ColumnName="RestoranId" />
+          <ScalarProperty Name="GradId" ColumnName="GradId" />
+          <ScalarProperty Name="OpstinaId" ColumnName="OpstinaId" />
+          <ScalarProperty Name="IsDelivering" ColumnName="IsDelivering" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KuhinjeTbls">
+      <EntityTypeMapping TypeName="skomi69_dostavaModel.KuhinjeTbl">
+        <MappingFragment StoreEntitySet="KuhinjeTbl">
+          <ScalarProperty Name="KuhinjeID" ColumnName="KuhinjeID" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestoranTbls">
+      <EntityTypeMapping TypeName="skomi69_dostavaModel.RestoranTbl">
+        <MappingFragment StoreEntitySet="RestoranTbl">
+          <ScalarProperty Name="RestoranID" ColumnName="RestoranID" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Koordinate" ColumnName="Koordinate" />
+          <ScalarProperty Name="MinimalnaNarudzbina" ColumnName="MinimalnaNarudzbina" />
+          <ScalarProperty Name="DostavaSeNaplacuje" ColumnName="DostavaSeNaplacuje" />
+          <ScalarProperty Name="Ocena" ColumnName="Ocena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OpstineTbls">
+      <EntityTypeMapping TypeName="skomi69_dostavaModel.OpstineTbl">
+        <MappingFragment StoreEntitySet="OpstineTbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="GradId" ColumnName="GradId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="skomi69_dostavaModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Veza_Restoran_KuhinjaTbl">
+      <EntityTypeMapping TypeName="skomi69_dostavaModel.Veza_Restoran_KuhinjaTbl">
+        <MappingFragment StoreEntitySet="Veza_Restoran_KuhinjaTbl">
+          <ScalarProperty Name="KuhinjeId" ColumnName="KuhinjeId" />
+          <ScalarProperty Name="RestoranId" ColumnName="RestoranId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spRestoraniPoKuhiji" FunctionName="skomi69_dostavaModel.Store.spRestoraniPoKuhiji">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="skomi69_dostavaModel.spRestoraniPoKuhiji_Result">
+          <ScalarProperty Name="RestoranID" ColumnName="RestoranID" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

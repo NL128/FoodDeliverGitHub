@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="skomi69_dostavaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="DrzavaTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Zastava" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GradoviTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DrzavaId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Veza_Grad_OpstinaTbl">
+    <Key>
+      <PropertyRef Name="RestoranId" />
+    </Key>
+    <Property Name="RestoranId" Type="Int32" Nullable="false" />
+    <Property Name="GradId" Type="Int32" />
+    <Property Name="OpstinaId" Type="Int32" />
+    <Property Name="IsDelivering" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="KuhinjeTbl">
+    <Key>
+      <PropertyRef Name="KuhinjeID" />
+    </Key>
+    <Property Name="KuhinjeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Veza_Restoran_KuhinjaTbl" Relationship="skomi69_dostavaModel.FK_Veza_Restoran_KuhinjaTbl_KuhinjeTbl" FromRole="KuhinjeTbl" ToRole="Veza_Restoran_KuhinjaTbl" />
+  </EntityType>
+  <EntityType Name="RestoranTbl">
+    <Key>
+      <PropertyRef Name="RestoranID" />
+    </Key>
+    <Property Name="RestoranID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Logo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Koordinate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MinimalnaNarudzbina" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DostavaSeNaplacuje" Type="Boolean" />
+    <Property Name="Ocena" Type="Decimal" Precision="1" Scale="1" />
+    <NavigationProperty Name="Veza_Restoran_KuhinjaTbl" Relationship="skomi69_dostavaModel.FK_Veza_Restoran_KuhinjaTbl_RestoranTbl" FromRole="RestoranTbl" ToRole="Veza_Restoran_KuhinjaTbl" />
+  </EntityType>
+  <EntityType Name="OpstineTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ime" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GradId" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="skomi69_dostavaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="DrzavaTbls" EntityType="Self.DrzavaTbl" />
+    <EntitySet Name="GradoviTbls" EntityType="Self.GradoviTbl" />
+    <EntitySet Name="Veza_Grad_OpstinaTbl" EntityType="Self.Veza_Grad_OpstinaTbl" />
+    <EntitySet Name="KuhinjeTbls" EntityType="Self.KuhinjeTbl" />
+    <EntitySet Name="RestoranTbls" EntityType="Self.RestoranTbl" />
+    <EntitySet Name="OpstineTbls" EntityType="Self.OpstineTbl" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <EntitySet Name="Veza_Restoran_KuhinjaTbl" EntityType="skomi69_dostavaModel.Veza_Restoran_KuhinjaTbl" />
+    <AssociationSet Name="FK_Veza_Restoran_KuhinjaTbl_KuhinjeTbl" Association="skomi69_dostavaModel.FK_Veza_Restoran_KuhinjaTbl_KuhinjeTbl">
+      <End Role="KuhinjeTbl" EntitySet="KuhinjeTbls" />
+      <End Role="Veza_Restoran_KuhinjaTbl" EntitySet="Veza_Restoran_KuhinjaTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Veza_Restoran_KuhinjaTbl_RestoranTbl" Association="skomi69_dostavaModel.FK_Veza_Restoran_KuhinjaTbl_RestoranTbl">
+      <End Role="RestoranTbl" EntitySet="RestoranTbls" />
+      <End Role="Veza_Restoran_KuhinjaTbl" EntitySet="Veza_Restoran_KuhinjaTbl" />
+    </AssociationSet>
+    <FunctionImport Name="spRestoraniPoKuhiji" ReturnType="Collection(skomi69_dostavaModel.spRestoraniPoKuhiji_Result)">
+      <Parameter Name="kuhinjaIds" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Veza_Restoran_KuhinjaTbl">
+    <Key>
+      <PropertyRef Name="RestoranId" />
+    </Key>
+    <Property Name="RestoranId" Type="Int32" Nullable="false" />
+    <Property Name="KuhinjeId" Type="Int32" />
+    <NavigationProperty Name="KuhinjeTbl" Relationship="skomi69_dostavaModel.FK_Veza_Restoran_KuhinjaTbl_KuhinjeTbl" FromRole="Veza_Restoran_KuhinjaTbl" ToRole="KuhinjeTbl" />
+    <NavigationProperty Name="RestoranTbl" Relationship="skomi69_dostavaModel.FK_Veza_Restoran_KuhinjaTbl_RestoranTbl" FromRole="Veza_Restoran_KuhinjaTbl" ToRole="RestoranTbl" />
+  </EntityType>
+  <Association Name="FK_Veza_Restoran_KuhinjaTbl_KuhinjeTbl">
+    <End Type="skomi69_dostavaModel.KuhinjeTbl" Role="KuhinjeTbl" Multiplicity="0..1" />
+    <End Type="skomi69_dostavaModel.Veza_Restoran_KuhinjaTbl" Role="Veza_Restoran_KuhinjaTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KuhinjeTbl">
+        <PropertyRef Name="KuhinjeID" />
+      </Principal>
+      <Dependent Role="Veza_Restoran_KuhinjaTbl">
+        <PropertyRef Name="KuhinjeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Veza_Restoran_KuhinjaTbl_RestoranTbl">
+    <End Type="skomi69_dostavaModel.RestoranTbl" Role="RestoranTbl" Multiplicity="1" />
+    <End Type="skomi69_dostavaModel.Veza_Restoran_KuhinjaTbl" Role="Veza_Restoran_KuhinjaTbl" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RestoranTbl">
+        <PropertyRef Name="RestoranID" />
+      </Principal>
+      <Dependent Role="Veza_Restoran_KuhinjaTbl">
+        <PropertyRef Name="RestoranId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="spRestoraniPoKuhiji_Result">
+    <Property Type="Int32" Name="RestoranID" Nullable="false" />
+    <Property Type="String" Name="Ime" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Logo" Nullable="true" MaxLength="20" />
+  </ComplexType>
+</Schema>

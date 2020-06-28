@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Dostava Hrane</title>
+
+    <link href="~/Content/HeaderFooter.css" rel="stylesheet" />
+    <link href="~/Content/Other.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header-food">
+        <div class="lable-food">
+            <div class="logo-food"><img src="" alt="Logo" /></div>
+            <div class="inner-lable">
+                <ul>
+                    @if (!Request.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                    }
+                    else
+                    {
+
+                        <li>@Html.ActionLink("Poručite", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                        <li>@Html.ActionLink("Korpa", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                        <li>@Html.ActionLink("Hello " + User.Identity.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right1" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <li title="LogOff"><div onclick="document.forms['logoutForm'].submit();" class="logout"><img src="https://t3.ftcdn.net/jpg/01/80/89/96/240_F_180899641_ZXnmSbc9dNJAHaP9KRWesLPQJWJtbxj1.jpg" /></div></li>
+
+                        }
+                    }
+                </ul>
+
+
+            </div>
+
+        </div>
+    </div>
+    <div class="content-food">
+        @RenderBody()
+
+    </div>
+
+    <div class="footer-food">
+        <div>&copy; @DateTime.Now.Year  Developed By Nebojsa Lazic</div>
+    </div>
+
+
+</body>
+</html>

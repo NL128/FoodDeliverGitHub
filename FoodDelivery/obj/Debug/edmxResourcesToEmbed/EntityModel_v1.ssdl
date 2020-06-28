@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="skomi69_dostavaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DrzavaTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Ime" Type="nvarchar" MaxLength="50" />
+    <Property Name="Zastava" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="GradoviTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ime" Type="nvarchar" MaxLength="50" />
+    <Property Name="DrzavaId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'skomi69_dostava.dbo.OpstineTbl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="OpstineTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ime" Type="nvarchar" MaxLength="100" />
+    <Property Name="GradId" Type="int" />
+  </EntityType>
+  <EntityType Name="Veza_Grad_OpstinaTbl">
+    <Key>
+      <PropertyRef Name="RestoranId" />
+    </Key>
+    <Property Name="RestoranId" Type="int" Nullable="false" />
+    <Property Name="GradId" Type="int" />
+    <Property Name="OpstinaId" Type="int" />
+    <Property Name="IsDelivering" Type="bit" />
+  </EntityType>
+  <EntityType Name="KuhinjeTbl">
+    <Key>
+      <PropertyRef Name="KuhinjeID" />
+    </Key>
+    <Property Name="KuhinjeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ime" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RestoranTbl">
+    <Key>
+      <PropertyRef Name="RestoranID" />
+    </Key>
+    <Property Name="RestoranID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ime" Type="nvarchar" MaxLength="50" />
+    <Property Name="Logo" Type="nvarchar" MaxLength="20" />
+    <Property Name="Koordinate" Type="nvarchar" MaxLength="50" />
+    <Property Name="MinimalnaNarudzbina" Type="money" />
+    <Property Name="DostavaSeNaplacuje" Type="bit" />
+    <Property Name="Ocena" Type="decimal" Precision="1" Scale="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'skomi69_dostava.skomi69_dostava.Veza_Restoran_KuhinjaTbl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Veza_Restoran_KuhinjaTbl">
+    <Key>
+      <PropertyRef Name="RestoranId" />
+    </Key>
+    <Property Name="RestoranId" Type="int" Nullable="false" />
+    <Property Name="KuhinjeId" Type="int" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Veza_Restoran_KuhinjaTbl_KuhinjeTbl">
+    <End Role="KuhinjeTbl" Type="Self.KuhinjeTbl" Multiplicity="0..1" />
+    <End Role="Veza_Restoran_KuhinjaTbl" Type="Self.Veza_Restoran_KuhinjaTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KuhinjeTbl">
+        <PropertyRef Name="KuhinjeID" />
+      </Principal>
+      <Dependent Role="Veza_Restoran_KuhinjaTbl">
+        <PropertyRef Name="KuhinjeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Veza_Restoran_KuhinjaTbl_RestoranTbl">
+    <End Role="RestoranTbl" Type="Self.RestoranTbl" Multiplicity="1" />
+    <End Role="Veza_Restoran_KuhinjaTbl" Type="Self.Veza_Restoran_KuhinjaTbl" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RestoranTbl">
+        <PropertyRef Name="RestoranID" />
+      </Principal>
+      <Dependent Role="Veza_Restoran_KuhinjaTbl">
+        <PropertyRef Name="RestoranId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="spRestoraniPoKuhiji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="skomi69_dostava">
+    <Parameter Name="kuhinjaIds" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="skomi69_dostavaModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DrzavaTbl" EntityType="Self.DrzavaTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GradoviTbl" EntityType="Self.GradoviTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Veza_Grad_OpstinaTbl" EntityType="Self.Veza_Grad_OpstinaTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KuhinjeTbl" EntityType="Self.KuhinjeTbl" Schema="skomi69_dostava" store:Type="Tables" />
+    <EntitySet Name="RestoranTbl" EntityType="Self.RestoranTbl" Schema="skomi69_dostava" store:Type="Tables" />
+    <EntitySet Name="OpstineTbl" EntityType="Self.OpstineTbl" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [OpstineTbl].[Id] AS [Id], 
+    [OpstineTbl].[Ime] AS [Ime], 
+    [OpstineTbl].[GradId] AS [GradId]
+    FROM [dbo].[OpstineTbl] AS [OpstineTbl]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Veza_Restoran_KuhinjaTbl" EntityType="Self.Veza_Restoran_KuhinjaTbl" store:Type="Tables" store:Schema="skomi69_dostava">
+      <DefiningQuery>SELECT 
+    [Veza_Restoran_KuhinjaTbl].[RestoranId] AS [RestoranId], 
+    [Veza_Restoran_KuhinjaTbl].[KuhinjeId] AS [KuhinjeId]
+    FROM [skomi69_dostava].[Veza_Restoran_KuhinjaTbl] AS [Veza_Restoran_KuhinjaTbl]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Veza_Restoran_KuhinjaTbl_KuhinjeTbl" Association="Self.FK_Veza_Restoran_KuhinjaTbl_KuhinjeTbl">
+      <End Role="KuhinjeTbl" EntitySet="KuhinjeTbl" />
+      <End Role="Veza_Restoran_KuhinjaTbl" EntitySet="Veza_Restoran_KuhinjaTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Veza_Restoran_KuhinjaTbl_RestoranTbl" Association="Self.FK_Veza_Restoran_KuhinjaTbl_RestoranTbl">
+      <End Role="RestoranTbl" EntitySet="RestoranTbl" />
+      <End Role="Veza_Restoran_KuhinjaTbl" EntitySet="Veza_Restoran_KuhinjaTbl" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,12 @@
+C:\Users\Kosa\source\repos\FoodDelivery\DomainLayer\bin\Debug\DomainLayer.dll
+C:\Users\Kosa\source\repos\FoodDelivery\DomainLayer\bin\Debug\DomainLayer.pdb
+C:\Users\Kosa\source\repos\FoodDelivery\DomainLayer\obj\Debug\DomainLayer.csproj.CoreCompileInputs.cache
+C:\Users\Kosa\source\repos\FoodDelivery\DomainLayer\obj\Debug\DomainLayer.dll
+C:\Users\Kosa\source\repos\FoodDelivery\DomainLayer\obj\Debug\DomainLayer.pdb
+C:\Users\Kosa\source\repos\FoodDelivery\DomainLayer\obj\Debug\DomainLayer.csprojAssemblyReference.cache
+D:\WebPortfolio\FoodDelivery\DomainLayer\bin\Debug\DomainLayer.dll
+D:\WebPortfolio\FoodDelivery\DomainLayer\bin\Debug\DomainLayer.pdb
+D:\WebPortfolio\FoodDelivery\DomainLayer\obj\Debug\DomainLayer.csproj.CoreCompileInputs.cache
+D:\WebPortfolio\FoodDelivery\DomainLayer\obj\Debug\DomainLayer.dll
+D:\WebPortfolio\FoodDelivery\DomainLayer\obj\Debug\DomainLayer.pdb
+D:\WebPortfolio\FoodDelivery\DomainLayer\obj\Debug\DomainLayer.csprojAssemblyReference.cache
